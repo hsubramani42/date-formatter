@@ -1,0 +1,28 @@
+{
+    "name": "date-formatter",
+    "version": "1.0.0",
+    "description": "Simple way to format your date and time",
+    "main": "src/index.js",
+    "type": "module",
+    "scripts": {
+        "test": "npm run test"
+    },
+    "keywords": [
+        "date",
+        "date-formatter",
+        "format-date"
+    ],
+    "author": "H Subramani <hsubramani42@gmail.com>",
+    "license": "MIT",
+    "directories": {
+        "test": "test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/hsubramani42/date-formatter.git"
+    },
+    "bugs": {
+        "url": "https://github.com/hsubramani42/date-formatter/issues"
+    },
+    "homepage": "https://github.com/hsubramani42/date-formatter#readme"
+}
