@@ -1,20 +1,31 @@
-const DATE_FORMAT_OPTION = {
+const WEEK_DAY_FORMATS = {
     SINGLE_CHAR: "narrow",
+    SHORT: "short",
+    LONG: "long",
+};
+const DAY_FORMATS = {
+    NUMERIC: "numeric",
+    TWO_DIGIT: "2-digit",
+};
+const MONTH_FORMATS = {
     NUMERIC: "numeric",
     TWO_DIGIT: "2-digit",
     SHORT: "short",
     LONG: "long",
 };
-
+const YEAR_FORMATS = {
+    NUMERIC: "numeric",
+    TWO_DIGIT: "2-digit",
+};
 export const FORMAT_OPTIONS = [
     {
         name: "Weekday",
         pattern: /w+/gi,
         regexLengths: [1, 3, 4],
         types: {
-            1: DATE_FORMAT_OPTION.SINGLE_CHAR,
-            3: DATE_FORMAT_OPTION.SHORT,
-            4: DATE_FORMAT_OPTION.LONG,
+            1: WEEK_DAY_FORMATS.SINGLE_CHAR,
+            3: WEEK_DAY_FORMATS.SHORT,
+            4: WEEK_DAY_FORMATS.LONG,
         },
     },
     {
@@ -22,8 +33,8 @@ export const FORMAT_OPTIONS = [
         pattern: /d+/gi,
         regexLengths: [1, 2],
         types: {
-            1: DATE_FORMAT_OPTION.NUMERIC,
-            2: DATE_FORMAT_OPTION.TWO_DIGIT,
+            1: DAY_FORMATS.NUMERIC,
+            2: DAY_FORMATS.TWO_DIGIT,
         },
     },
     {
@@ -31,10 +42,10 @@ export const FORMAT_OPTIONS = [
         pattern: /m+/gi,
         regexLengths: [1, 2, 3, 4],
         types: {
-            1: DATE_FORMAT_OPTION.NUMERIC,
-            2: DATE_FORMAT_OPTION.TWO_DIGIT,
-            3: DATE_FORMAT_OPTION.SHORT,
-            4: DATE_FORMAT_OPTION.LONG,
+            1: MONTH_FORMATS.NUMERIC,
+            2: MONTH_FORMATS.TWO_DIGIT,
+            3: MONTH_FORMATS.SHORT,
+            4: MONTH_FORMATS.LONG,
         },
     },
     {
@@ -42,12 +53,11 @@ export const FORMAT_OPTIONS = [
         pattern: /y+/gi,
         regexLengths: [2, 4],
         types: {
-            2: DATE_FORMAT_OPTION.TWO_DIGIT,
-            4: DATE_FORMAT_OPTION.NUMERIC,
+            2: YEAR_FORMATS.TWO_DIGIT,
+            4: YEAR_FORMATS.NUMERIC,
         },
     },
 ];
-
 /*
     Note:
     Currently, all english alphabets other than d, m, w, y are ignored.
@@ -55,5 +65,4 @@ export const FORMAT_OPTIONS = [
 
  */
 export const INVALID_DATE_PATTERN = /[a-ce-ln-vxz]/i;
-
 export default {};

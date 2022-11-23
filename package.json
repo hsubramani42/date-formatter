@@ -1,11 +1,11 @@
 {
     "name": "date-formatter",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "Simple way to format your date and time",
-    "main": "src/index.js",
+    "main": "./dist/src/index.js",
     "type": "module",
     "scripts": {
-        "test": "npm run test"
+        "compiler": "npx tsc"
     },
     "keywords": [
         "date",
@@ -24,5 +24,8 @@
     "bugs": {
         "url": "https://github.com/hsubramani42/date-formatter/issues"
     },
-    "homepage": "https://github.com/hsubramani42/date-formatter#readme"
+    "homepage": "https://github.com/hsubramani42/date-formatter#readme",
+    "devDependencies": {
+        "typescript": "^5.0.0-dev.20221122"
+    }
 }
