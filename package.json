@@ -1,11 +1,18 @@
 {
     "name": "date-formatter",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "description": "Simple way to format your date and time",
-    "main": "./dist/src/index.js",
+    "main": "./lib/src/index.js",
+    "types": "./lib/src/index.d.ts",
     "type": "module",
     "scripts": {
-        "compiler": "npx tsc"
+        "compiler": "npx tsc -p tsconfig.json",
+        "test": "jest --config ./jest.config.ts"
+    },
+    "jest": {
+        "transform": {
+            "^.+\\.[t|j]sx?$": "babel-jest"
+        }
     },
     "keywords": [
         "date",
@@ -14,9 +21,6 @@
     ],
     "author": "H Subramani <hsubramani42@gmail.com>",
     "license": "MIT",
-    "directories": {
-        "test": "test"
-    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/hsubramani42/date-formatter.git"
@@ -26,6 +30,10 @@
     },
     "homepage": "https://github.com/hsubramani42/date-formatter#readme",
     "devDependencies": {
-        "typescript": "^5.0.0-dev.20221122"
+        "@babel/preset-env": "^7.20.2",
+        "@babel/preset-typescript": "^7.18.6",
+        "@types/jest": "^29.2.3",
+        "jest": "^29.3.1",
+        "typescript": "^4.9.3"
     }
 }

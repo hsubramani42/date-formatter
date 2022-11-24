@@ -1,5 +1,5 @@
-import DateFormat from "./@types/DateFormat.js";
-import { INVALID_DATE_PATTERN } from "./constants.js";
+import DateFormat from "./@types/DateFormat";
+import { INVALID_DATE_PATTERN } from "./constants";
 
 export const formatUtil = (
     date: Date,
@@ -13,13 +13,13 @@ export const formatUtil = (
     for (let i = 0; i < matchingPatterns.length; i++) {
         if (
             matchingPatterns[i] &&
-            formatSetting.regexLengths.includes(matchingPatterns[i][0]?.length)
+            formatSetting.regexLengths.includes(matchingPatterns[i][0].length)
         ) {
-            const options = formatSetting.types[matchingPatterns[i][0]?.length];
+            const options = formatSetting.types[matchingPatterns[i][0].length];
             output = output.replace(
                 matchingPatterns[i][0],
                 `${date.toLocaleString("default", {
-                    [formatSetting?.name?.toLowerCase()]: options,
+                    [formatSetting.name.toLowerCase()]: options,
                 })}`
             );
         } else {
@@ -31,7 +31,7 @@ export const formatUtil = (
 
 export const checkValidInput = (dateFormat: String) => {
     if (dateFormat.match(INVALID_DATE_PATTERN)) {
-        throw TypeError("Invalid format type");
+        throw TypeError("Invalid date format type");
     }
 };
 

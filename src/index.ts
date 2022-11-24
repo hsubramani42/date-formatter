@@ -1,5 +1,5 @@
-import { FORMAT_OPTIONS } from "./constants.js";
-import { formatUtil, checkValidInput } from "./utils.js";
+import { FORMAT_OPTIONS } from "./constants";
+import { formatUtil, checkValidInput } from "./utils";
 
 const getFormattedDate = (date: Date, format: String): String => {
     try {
