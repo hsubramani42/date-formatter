@@ -1,17 +1,24 @@
 {
-    "name": "date-formatter",
+    "name": "date-formatter-ts",
     "version": "1.2.0",
-    "description": "Simple way to format your date and time",
+    "description": "Simple way to format your date.(written in TS)",
     "main": "./lib/src/index.js",
     "types": "./lib/src/index.d.ts",
     "type": "module",
     "scripts": {
-        "compiler": "npx tsc -p tsconfig.json",
+        "build": "npx tsc -p tsconfig.json",
         "test": "jest --config ./jest.config.ts"
     },
     "jest": {
         "transform": {
             "^.+\\.[t|j]sx?$": "babel-jest"
+        }
+    },
+    "typesVersions": {
+        ">=4.6": {
+            "*": [
+                "ts3.2/*"
+            ]
         }
     },
     "keywords": [
